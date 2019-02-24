@@ -825,7 +825,7 @@ func (c *Controller) mergePRs(sp subpool, prs []PullRequest) error {
 			if err := c.ghc.Merge(sp.org, sp.repo, int(pr.Number), github.MergeDetails{
 				SHA:         string(pr.HeadRefOID),
 				MergeMethod: string(mergeMethod),
-				CommitMessage: "",
+				CommitMessage: "blablabla",
 			}); err != nil {
 				// TODO: Add a config option to abort batches if a PR in the batch
 				// cannot be merged for any reason. This would skip merging
@@ -879,7 +879,7 @@ func (c *Controller) mergePRs(sp subpool, prs []PullRequest) error {
 					return augmentError(err, pr)
 				}
 			} else {
-				log.Info("Merged.")
+				log.Info("Merged with blablabla.")
 				merged = append(merged, int(pr.Number))
 				// If we have more PRs to merge, sleep to give Github time to recalculate
 				// mergeability.
