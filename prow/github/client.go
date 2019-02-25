@@ -2155,7 +2155,7 @@ type MergeDetails struct {
 	// CommitTitle defaults to the automatic message.
 	CommitTitle string `json:"commit_title,omitempty"`
 	// CommitMessage defaults to the automatic message.
-	CommitMessage string `json:"commit_message,omitempty"`
+	CommitMessage string `json:"commit_message"`
 	// The PR HEAD must match this to prevent races.
 	SHA string `json:"sha,omitempty"`
 	// Can be "merge", "squash", or "rebase". Defaults to merge.
