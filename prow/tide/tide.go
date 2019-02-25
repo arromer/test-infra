@@ -825,7 +825,7 @@ func (c *Controller) mergePRs(sp subpool, prs []PullRequest) error {
 			if err := c.ghc.Merge(sp.org, sp.repo, int(pr.Number), github.MergeDetails{
 				SHA:         string(pr.HeadRefOID),
 				MergeMethod: string(mergeMethod),
-				CommitMessage: "blablabla",
+				CommitMessage: "",
 			}); err != nil {
 				// TODO: Add a config option to abort batches if a PR in the batch
 				// cannot be merged for any reason. This would skip merging
